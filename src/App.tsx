@@ -1,15 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Login from './container/login/login';
+import Header from './components/header/header';
+import Footer from './components/footer/footer';
+
+import AppRouter from './components/app-router/appRouter';
+import NavLinks from './components/nav-links/nav-links';
+import {
+  BrowserRouter,
+} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        Wart-A-Lap
-      </header>
-      <Login></Login>
+    <div className="flex flex-col h-screen justify-between">
+      <BrowserRouter>
+        <div  className="h-10">
+          <Header></Header>
+          <NavLinks></NavLinks>
+        </div>
+
+        <AppRouter></AppRouter>
+
+        <Footer></Footer>
+      </BrowserRouter>
     </div>
   );
 }
